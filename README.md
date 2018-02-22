@@ -14,5 +14,5 @@ Other files in directory ZDT1:
 1. ZDT1.py: the test function ZDT1.
 2. ZDT1.txt: the parameter name, lower bound, upper bound.
 3. ZDT1\_true.py: the true Pareto frontier of ZDT1.
-4. ZDT1\dft.txt: default value of 2 objectives of ZDT1 function, used by WNSGA2 and WMO-ASMO. In WNSGA2 and WMO-ASMO, the search is constrained to the region that better than the objective values specified in this file.
+4. ZDT1\_dft.txt: default value of 2 objectives of ZDT1 function, used by WNSGA2 and WMO-ASMO. In WNSGA2 and WMO-ASMO, the search is constrained to the region that better than the objective values specified in this file.
 
