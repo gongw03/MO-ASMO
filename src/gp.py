@@ -68,7 +68,7 @@ def sceua_optimizer(obj_func, initial_theta, bounds):
         bu[i] = bd[1]
     ngs = nopt
     maxn = 3000
-    kstop = 10,
+    kstop = 10
     pcento = 0.1
     peps = 0.001
     verbose = False
