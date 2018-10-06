@@ -14,9 +14,9 @@ from discrepancy import CD2
 def sample(n, s):
     ''' main function of GLP design'''
     m = EulerFunction(n)
-    if m*1.0/n < (1 - 1.0/n):
-        m = EulerFunction(n+1)
+    if float(m)/n < 0.9:
         if m < 20 and s < 4:
+            m = EulerFunction(n+1)
             X = GLP_GV(n+1,s,m,plusone=True)
         else:
             X = GLP_PGV(n+1,s,plusone=True)
@@ -32,7 +32,8 @@ def GLP_PGV(n,s,plusone=False):
     h = PowerGenVector(n,s)
     X = np.random.uniform(0,1,size=[n,s])
     D = 1e32
-    for i in range(min(h.shape[0],20)):
+    #for i in range(min(h.shape[0],20)):
+    for i in range(h.shape[0]):
         x = glpmod(n,h[i,:])
         if plusone:
             x = x[0:n-1,:]
@@ -100,7 +101,8 @@ def PowerGenVector(n,s):
         if fc.gcd(i,n) == 1:
             a.append(i)
     aa = []
-    for i in range(min(len(a),20)):
+    #for i in range(min(len(a),20)):
+    for i in range(len(a)):
         ha = np.mod([a[i]**t for t in range(1,s)],n)
         ha = np.sort(ha)
         rep = False
